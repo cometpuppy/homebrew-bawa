@@ -13,8 +13,9 @@ jobs:
       - name: Build bawa
         run: cargo install bawa --root ./output
 
-      - name: Upload binary
-        uses: actions/upload-artifact@v6
+      - name: Create Release and Upload Binary
+        uses: softprops/action-gh-release@v2
         with:
-          name: bawa-linux-x86_64
-          path: output/bin/bawa
+          tag_name: bawa-v0.1.0
+          name: bawa v0.1.0
+          files: output/bin/bawa
