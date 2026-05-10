@@ -2,7 +2,7 @@ class Bawa < Formula
   desc "A TUI game save organizer"
   homepage "https://github.com/sarowish/bawa"
   url "https://github.com/cometpuppy/homebrew-bawa/releases/download/bawa-v0.1.0/bawa"
-  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  sha256 "a3fe0f36874799bab5d91315462774b174c63747dae3a4edfa3715759ee8f7c1"
   license "MIT"
   version "0.1.0"
 
