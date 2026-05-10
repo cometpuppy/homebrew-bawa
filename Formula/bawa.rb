@@ -1,14 +1,13 @@
 class Bawa < Formula
   desc "A TUI game save organizer"
   homepage "https://github.com/sarowish/bawa"
-  url "https://github.com/sarowish/bawa/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "afe4c1808604e6be0b42afea43509c76f8ed321d8466b2e1cc37c33106444ad8"
+  url "https://github.com/cometpuppy/homebrew-bawa/releases/download/bawa-v0.1.0/bawa"
+  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
   license "MIT"
-
-  depends_on "rust" => :build
+  version "0.1.0"
 
   def install
-    system "cargo", "install", *std_cargo_args
+    bin.install "bawa"
   end
 
   test do
