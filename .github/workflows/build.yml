@@ -3,6 +3,9 @@ name: Build bawa binary
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build-linux:
     runs-on: ubuntu-latest
@@ -13,9 +16,10 @@ jobs:
       - name: Build bawa
         run: cargo install bawa --root ./output
 
-      - name: Create Release and Upload Binary
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: bawa-v0.1.0
-          name: bawa v0.1.0
-          files: output/bin/bawa
+      - name: Create Release
+        run: |
+          gh release create bawa-v0.1.0 output/bin/bawa \
+            --title "bawa v0.1.0" \
+            --notes "bawa v0.1.0 binary for Linux x86_64"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
