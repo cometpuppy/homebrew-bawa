@@ -14,7 +14,7 @@ jobs:
         run: cargo install bawa --root ./output
 
       - name: Upload binary
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: bawa-linux-x86_64
           path: output/bin/bawa
