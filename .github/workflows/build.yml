@@ -1,0 +1,20 @@
+name: Build bawa binary
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build bawa
+        run: cargo install bawa --root ./output
+
+      - name: Upload binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: bawa-linux-x86_64
+          path: output/bin/bawa
